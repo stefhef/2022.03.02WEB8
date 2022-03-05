@@ -15,7 +15,7 @@ class Jobs(SqlAlchemyBase):
     work_size = sqlalchemy.Column(Integer)
     collaborators = sqlalchemy.Column(String)
     end_date = sqlalchemy.Column(Date)
-    start_date = sqlalchemy.Column(Date)
+    start_date = sqlalchemy.Column(Date, default=datetime.datetime.now)
     is_finished = sqlalchemy.Column(Boolean)
 
     team_leader_instance = relation("User")
